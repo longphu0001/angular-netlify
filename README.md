@@ -1,4 +1,6 @@
-# AngularNetlify
+# [Angular Netlify](angular-netlify-lp.netlify.com)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/00b033e5-ac9a-45f4-b812-535a57d6eb2b/deploy-status)](https://app.netlify.com/sites/angular-netlify-lp/deploys)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
