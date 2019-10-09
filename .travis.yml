@@ -1,0 +1,23 @@
+
+language: node_js
+node_js:
+  - "12"
+dist: trusty
+sudo: false
+
+branches:
+  only:
+  - master
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install -g yarn
+
+script:
+  - yarn lint
+  - yarn test-headless
+  - yarn build
+  - mv dist/angular-netlify/index.html dist/angular-netlify/404.html
