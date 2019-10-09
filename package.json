@@ -1,5 +1,5 @@
 {
-  "name": "full-site",
+  "name": "angular-netlify",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
