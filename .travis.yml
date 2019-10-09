@@ -17,6 +17,7 @@ install:
   - npm install -g yarn
 
 script:
+  - yarn
   - yarn lint
   - yarn test-headless
   - yarn build
