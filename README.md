@@ -1,6 +1,10 @@
 # [Angular Netlify](angular-netlify-lp.netlify.com)
 
+[![Build Status](https://travis-ci.org/longphu0001/angular-netlify.svg?branch=master)](https://travis-ci.org/longphu0001/angular-netlify)
+[![CircleCI](https://circleci.com/gh/longphu0001/angular-netlify/tree/master.svg?style=svg)](https://circleci.com/gh/longphu0001/angular-netlify/tree/master)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/00b033e5-ac9a-45f4-b812-535a57d6eb2b/deploy-status)](https://app.netlify.com/sites/angular-netlify-lp/deploys)
+[![CircleCI](https://circleci.com/gh/longphu0001/angular-netlify/tree/master.svg?style=svg)](https://circleci.com/gh/longphu0001/angular-netlify/tree/master)
+[![Dependencies](https://david-dm.org/longphu0001/angular-netlify.svg)](https://david-dm.org/longphu0001/angular-netlify)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
