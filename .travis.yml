@@ -5,20 +5,33 @@ node_js:
 dist: trusty
 sudo: false
 
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
 branches:
   only:
   - master
 
 cache:
   directories:
-    - node_modules
+    - ./node_modules
 
 install:
   - npm install -g yarn
-
-script:
   - yarn
-  - yarn lint
-  - yarn test-headless
-  - yarn build
-  - mv dist/angular-netlify/index.html dist/angular-netlify/404.html
+
+jobs:
+  include:
+    - stage: Lint
+      name: "Lint"
+      script: yarn lint
+    - stage: Test
+      name: "Test"
+      script: yarn test-headless
+    - stage: Build
+      name: "Build"
+      script: yarn build
