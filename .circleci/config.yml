@@ -13,5 +13,37 @@ jobs:
           key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
+  test:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:12-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run: npm run test-ci
       - run: npm run e2e-ci
+  coverage:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:12-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run:
+          name: "Run Test and Collect Coverage Reports"
+          command: npm run code-coverage
+      - store_artifacts:
+          path: coverage/angular-netlify
+workflows:
+  version: 2
+  build-test-coverage:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - coverage:
+          requires:
+            - test
